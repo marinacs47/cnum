@@ -23,7 +23,7 @@ def zeros(a, b, c):
         return [x1, x2]
 
 def main():
-    x = zeros(2, 10, 3)
+    x = zeros(0, 0, 3)
     print(x)
 
 if __name__ == "__main__":
