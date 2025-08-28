@@ -9,6 +9,8 @@
     # pkgs.go
      pkgs.python311
      pkgs.python311Packages.pip
+     pkgs.python311Packages.numpy
+     pkgs.python311Packages.matplotlib
     # pkgs.nodejs_20
     # pkgs.nodePackages.nodemon
   ];
