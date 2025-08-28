@@ -21,3 +21,4 @@ def bissecao(f,     # função que queremos encontrar a raiz
             i += 1
             ERRO = abs(f(b) - f(a))
         return c, i
+
