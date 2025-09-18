@@ -44,10 +44,15 @@ def main():
     print("\nVetor B:")
     print(B)
     print("\nSolução Jacobi x:")
-    X = jacobi(A, B, 100, 1e-3)
+    X = jacobi(A, B, 100, 1e-8)
     print(X)
     print("\nSolução Seidel x:")
-    X = seidel(A, B, 100, 1e-3)
+    X = seidel(A, B, 100, 1e-8)
+    print(X)
+    print("\nSolução LU x:")
+    X = lu(A, B)
+    print("\nSolução NumPy x:")
+    X = np.linalg.solve(A, B)
     print(X)
 
     #Atividade 3
@@ -64,11 +69,125 @@ def main():
     print("\nSolução Seidel x:")
     X = seidel(A, B, 100, 1e-8)
     print(X)
+    print("\nSolução LU x:")
+    X = lu(A, B)
+    print(X)
+    print("\nSolução NumPy x:")
+    X = np.linalg.solve(A, B)
+    print(X)
 
     #Atividade 4 
     print("-- Atividade 4 --")
-
-
+    print("-- Caso a--")
+    A = np.array(
+        [
+            [1, 0, 0, 0, 0],
+            [1 / 2, (-1 / 2) + (-1 / 2) + (-1 / 100), 0, 0, 1 / 2],
+            [0, 1 / 2, (-1 / 2) + (-1 / 2) + (-1 / 100), 1 / 2, 0],
+            [0, 0, 1 / 2, (-1 / 2) + (-1 / 2) + (-1 / 100), 1 / 2],
+            [0, 0, 0, 1 / 2, (-1 / 2) + (-1 / 50)],
+        ],
+        dtype=float,
+    )
+    B = np.array([127, 0, 0, 0, 0], dtype=float)
+    print("\nMatriz A:")
+    print(A)
+    print("\nVetor B:")
+    print(B)
+    print("\nSolução Jacobi x:")
+    X = jacobi(A, B, 100, 1e-8)
+    print(X)
+    print("\nSolução Seidel x:")
+    X = seidel(A, B, 100, 1e-8)
+    print(X)
+    print("\nSolução LU x:")
+    X = lu(A, B)
+    print(X)
+    print("\nSolução NumPy x:")
+    X = np.linalg.solve(A, B)
+    print(X)
+    print("-- Caso b --")
+    A = np.array(
+        [
+            [1, 0, 0, 0, 0],
+            [1 / 2, (-1 / 2) + (-1 / 2) + (-1 / 50), 0, 0, 1 / 2],
+            [0, 1 / 2, (-1 / 2) + (-1 / 2) + (-1 / 100), 1 / 2, 0],
+            [0, 0, 1 / 2, (-1 / 2) + (-1 / 2) + (-1 / 100), 1 / 2],
+            [0, 0, 0, 1 / 2, (-1 / 2) + (-1 / 100)],
+        ],
+        dtype=float,
+    )
+    B = np.array([127, 0, 0, 0, 0], dtype=float)
+    print("\nMatriz A:")
+    print(A)
+    print("\nVetor B:")
+    print(B)
+    print("\nSolução Jacobi x:")
+    X = jacobi(A, B, 100, 1e-8)
+    print(X)
+    print("\nSolução Seidel x:")
+    X = seidel(A, B, 100, 1e-8)
+    print(X)
+    print("\nSolução LU x:")
+    X = lu(A, B)
+    print(X)
+    print("\nSolução NumPy x:")
+    X = np.linalg.solve(A, B)
+    print(X)
+    print("-- Caso reduzido para 4 incógnitas - Caso a--")
+    A = np.array(
+        [
+            [(-1 / 2) + (-1 / 2) + (-1 / 100), 0, 0, 1 / 2],
+            [1 / 2, (-1 / 2) + (-1 / 2) + (-1 / 100), 1 / 2, 0],
+            [0, 1 / 2, (-1 / 2) + (-1 / 2) + (-1 / 100), 1 / 2],
+            [0, 0, 1 / 2, (-1 / 2) + (-1 / 50)],
+        ],
+        dtype=float,
+    )
+    B = np.array([(-127 / 2), 0, 0, 0], dtype=float)
+    print("\nMatriz A:")
+    print(A)
+    print("\nVetor B:")
+    print(B)
+    print("\nSolução Jacobi x:")
+    X = jacobi(A, B, 100, 1e-8)
+    print(X)
+    print("\nSolução Seidel x:")
+    X = seidel(A, B, 100, 1e-8)
+    print(X)
+    print("\nSolução LU x:")
+    X = lu(A, B)
+    print(X)
+    print("\nSolução NumPy x:")
+    X = np.linalg.solve(A, B)
+    print(X)
+    print("-- Caso reduzido para 4 incógnitas - Caso b--")
+    A = np.array(
+        [
+            [(-1 / 2) + (-1 / 2) + (-1 / 50), 0, 0, 1 / 2],
+            [1 / 2, (-1 / 2) + (-1 / 2) + (-1 / 100), 1 / 2, 0],
+            [0, 1 / 2, (-1 / 2) + (-1 / 2) + (-1 / 100), 1 / 2],
+            [0, 0, 1 / 2, (-1 / 2) + (-1 / 100)],
+        ],
+        dtype=float,
+    )
+    B = np.array([(-127 / 2), 0, 0, 0], dtype=float)
+    print("\nMatriz A:")
+    print(A)
+    print("\nVetor B:")
+    print(B)
+    print("\nSolução Jacobi x:")
+    X = jacobi(A, B, 100, 1e-8)
+    print(X)
+    print("\nSolução Seidel x:")
+    X = seidel(A, B, 100, 1e-8)
+    print(X)
+    print("\nSolução LU x:")
+    X = lu(A, B)
+    print(X)
+    print("\nSolução NumPy x:")
+    X = np.linalg.solve(A, B)
+    print(X)
 
 
 
