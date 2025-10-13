@@ -11,8 +11,8 @@ from algoritmos import  (
 # Função Atividade1
 def f1(T):
     K = 272.975 # Temperatura (K)
-    E = 500.125
-    return 5.67e-8 * (T**4) + 0.4 * (T - K) - E
+    E = 500.125 # Irradiação Solar (W/mˆ2)
+    return 5.67*1e-8 * (T**4) + 0.4 * (T - K) - E
 
 def main():
     #1° Trabalho
@@ -20,7 +20,7 @@ def main():
 
     # Atividade 1
     print("-- Atividade 1 --")
-    r, i = bissecao(f1, 300, 320, 1e-5)
+    r, i = bissecao(f1, 300, 305, 1e-5)
     print(f"raiz = {r} , i = {i}")
 
     # Atividade 2
