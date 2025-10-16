@@ -117,6 +117,7 @@ def seidel(A: np.ndarray, B: np.ndarray, k: int, TOL: float) -> np.ndarray:
     return X
 
 
+
 def JN(x, F, eps=1e-8):
     x = np.asarray(x, dtype=float)
     n = x.size
@@ -147,4 +148,3 @@ def fixed_point(a, g, TOL=1e-8, iter=1000):
         x = g(a)
         i += 1
     return x
-

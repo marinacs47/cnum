@@ -56,13 +56,24 @@ def main():
     def F(x):
         x1, x2 = x
         return np.array([
-            (x1**4 + 0.06823*x1) - (x2**4 + 0.05848*x2) - 0.01753,
-            (x1**4 + 0.05848*x1) - (2*x2**4 + 0.11696*x2) -  0.00254       
+            ((x1**4 + 0.06823*x1) - (x2**4 + 0.05848*x2) - 0.01753),
+            ((x1**4 + 0.05848*x1) - (2*x2**4 + 0.11696*x2) -  0.00254)       
         ], dtype = float)
 
-    x = np.array([0.0, 0.0], dtype=float) 
+    def J(x):
+        x1, x2 = x
+        return np.array([
+
+            [4*x1**3 + 0.06823, -4*x2**3 - 0.05848],
+            [4*x1**3 + 0.05848, -8*x2**3 - 0.11696]
+
+            ], dtype = float)
+
+    x = np.array([0.5, 0.5], dtype = float)
+    r = fixed_point(x, lambda x: G(x, F, J))
+    print(r)
     r = fixed_point(x, lambda x: GN(x, F))
-    print(r)   
+    print(r)
 
 if __name__ == "__main__":
     main()
