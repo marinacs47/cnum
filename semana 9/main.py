@@ -102,7 +102,7 @@ def main():
     for xi, n, l, p, s in zip(xr, yn, yl, yp, ys):
         print(f"x = {xi:>4}:  N={n: .6f} | L={l: .6f} | P={p: .6f} | S={s: .6f}")
 
-    plot(x, y, 1)
+    plot(x, y, 2)
 
     #Atividade 3
 
@@ -137,7 +137,7 @@ def main():
     for xi, n, l, p, s in zip(xr, yn, yl, yp, ys):
         print(f"x = {xi:>4}:  N={n: .6f} | L={l: .6f} | P={p: .6f} | S={s: .6f}")
 
-    plot(x, y, 1)
+    plot(x, y, 3)
 
     print("Letra b")
     x = np.array(
@@ -169,7 +169,7 @@ def main():
     for xi, n, l, p, s in zip(xr, yn, yl, yp, ys):
         print(f"x = {xi:>4}:  N={n: .6f} | L={l: .6f} | P={p: .6f} | S={s: .6f}")
 
-    plot(x, y, 1)
+    plot(x, y, 4)
 
 
 
