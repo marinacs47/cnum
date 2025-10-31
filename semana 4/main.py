@@ -56,7 +56,7 @@ def plot(f, xi, xf, d=0.1, num_img=1):
     plt.title("Visualização da função f(x)")
 
     # Salvar gráfico como imagem
-    plt.savefig(f"4/bissecao_{num_img}.png", dpi=120, bbox_inches="tight")
+    plt.savefig(f"semana 4/bissecao_{num_img}.png", dpi=120, bbox_inches="tight")
     plt.close()
 
 
