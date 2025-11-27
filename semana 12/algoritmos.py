@@ -12,14 +12,9 @@ def simpson(f, a, b):
     return h * ((1/3) * f(a) + (4/3) * f((a + b) / 2) + (1/3) * f(b))
 
 def integral(metodo, f, a, b, n):
-    """
-    Integração simples que usa 'n' como tamanho de passo (não número de subintervalos).
-    Mantido para compatibilidade com seu código original.
-    """
     s = 0.0
     c = a
     d = a + n
-    # usar while com margem para evitar perda do último pedaço por float:
     while d <= b + 1e-15:
         s += metodo(f, c, d)
         c = d
@@ -28,9 +23,6 @@ def integral(metodo, f, a, b, n):
 
 # ---- MÉTODOS COMPOSTOS ----
 def medio_composto(f, a, b, n):
-    """
-    n = número de subintervalos (inteiro)
-    """
     h = (b - a) / n
     s = 0.0
     for i in range(n):
@@ -47,11 +39,9 @@ def trapezio_composto(f, a, b, n):
     return s * h
 
 def simpson_composto(f, a, b, n):
-    """
-    Simpson composto exige n par.
-    """
+
     if n % 2 != 0:
-        raise ValueError("Simpson composto requer n par.")
+        raise ValueError("número par")
     h = (b - a) / n
     s = f(a) + f(b)
     for i in range(1, n):
@@ -63,11 +53,6 @@ def simpson_composto(f, a, b, n):
     return s * h / 3
 
 def integral_composto(metodo_simples, f, a, b, n):
-    """
-    Alternativa: recebe um 'metodo_simples' (medio, trapezio ou simpson)
-    e aplica esse metodo para cada subintervalo, dividindo em n subintervalos.
-    (metodo_simples deve receber (f,a,b) e retornar a integral no subintervalo)
-    """
     h = (b - a) / n
     s = 0.0
     c = a
